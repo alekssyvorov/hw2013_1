@@ -1,51 +1,48 @@
-
-# Перевірте, чи є число парним чи ні.
-# Ваша функція повинна повертати True,
-# якщо число парне, і False, якщо число непарне.
-
-def get_even(number):
-    if number % 2 == 0:
-        return True
-    return False
-
-# def get_even(number):
-#     if not number % 2:
-#         return True
-#     return False
+# class Forest:
+#     height = 100
+#     weight = 5
+#     age = 25
+#     color_list = 'green'
+#     breed = "oak"
 #
-# print(get_even(7))
-# print(get_even(146))
+#     def __init__(self):
+#         print(Forest.height)
+#         print(Forest.age)
+#         print(Forest.weight)
+#
+# tree1 = Forest()
+# # print(tree1)
 
-# Ця функція повинна приймати рядок як вхідні дані
-# та повертати кількість
-# голосних (a, e, i, o, u) у рядку. Функція має
-# бути нечутливою до регістру.
+class Student:
+    group = "C2013"
 
-def counter_symbol(s):
-    temp = "aeiou"
-    s = s.lower()
-    count_lit = 0
-    for lit in temp:
-        count_lit += s.count(lit)
-    return count_lit
+    def __init__(self, age, name=None, height=160):
+        self.height = height
+        self.weight = 60
+        self.age = age
+        self.name = name
+    def printer(self):
+        print(self.weight)
+    def grow(self, height=10):
+        self.height += height
+    def __str__(self):
+        return (f"I'm student. My name is {self.name} "
+                f"and i'm {self.age} old.")
 
 
-s = "Clear weather in Odessa will be observed throughout the day. No precipitation."
-
-# print(counter_symbol(s))
-
-# Ця функція повинна приймати на вхід ціле число невід('ємне і '
-#  'повертати факторіал цього числа.)
-# Факторіал невід('ємного цілого числа n - це добуток '
-# всіх позитивних цілих чисел, менших або рівних n.)
-
-def get_factorial(number):
-    factorial = 1
-    if number == 0:
-        print('Error')
-    while number > 0:
-        factorial *= number
-        number -= 1
-    return factorial
-
-print(get_factorial(6))
+nick = Student(15, "Nick", 200)
+kate = Student(16, "Kate", 140)
+print(nick)
+print(kate)
+print(nick.age)
+print(kate.age)
+print(nick.height)
+print(kate.height)
+print(nick.group, kate.group)
+nick.printer()
+kate.grow()
+print(kate.height)
+kate.grow()
+print(kate.height)
+kate.grow(25)
+print(kate.height)
