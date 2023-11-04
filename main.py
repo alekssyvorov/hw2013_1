@@ -1,84 +1,59 @@
-import random
-
-class Human:
-    def __init__(self, name="Human", job=None, home=None, car=None):
-        self.name = name
-        self.money = 100
-        self.gladness = 50
-        self.satiety = 50
-        self.job = job
-        self.home = home
-        self.car = car
-    def get_home(self):
-        self.home = House()
-
-    def get_car(self):
-        self.car = Auto(brands_of_car)
-
-    def get_job(self):
-        if self.car.drive():
-            pass
-        else:
-            self.to_repair()
-            return
-        self.job = Job(job_list)
-
-    # def eat(self):
-    #     if self.home.food <= 0:
-    #         self.shoping("food")
-
-    def to_repair(self):
-        self.car.strength += 100
-        self.money -= 50
-    def clean_home(self):
-        self.gladness -= 5
-        self.home.mess = 0
-    def chill(self):
-        self.gladness += 10
-        self.home.mess += 5
+# class Grandparent:
+#     height = 170
+#     satiety = 100
+#     age = 60
+#
+#
+# class Parent(Grandparent):
+#     age = 40
+#
+#
+# class Child(Parent):
+#     height = 90
+#
+#     def __init__(self):
+#         print(self.height)
+#         print(self.satiety)
+#         print(self.age)
+#
+#
+# nick = Child()
 
 
+class Hello_world:
+    hello ="Hello"
+    _hello = "_Hello"
+    __hello = "__Hello"
 
-class House:
     def __init__(self):
-        self.mess = 0
-        self.food = 0
+        self.world = "world"
+        self._world = "_world"
+        self.__world = "__world"
+    def printer(self):
+        print(self.hello)
+        print(self._hello)
+        print(self.__hello)
+        print(self.world)
+        print(self._world)
+        print(self.__world)
+    def _get_printer(self):
+        print(self.hello)
+        print(self._hello)
+        print(self.__hello)
+        print(self.world)
+        print(self._world)
+        print(self.__world)
 
-class Auto:
-    def __init__(self, brand_list):
-        self.brand = random.choice(list(brand_list))
-        self.fuel = brand_list[self.brand]["fuel"]
-        self.strength = brand_list[self.brand]["strength"]
-        self.consumption = brand_list[self.brand]["consumption"]
-
-    def drive(self):
-        if self.strength > 0 and self.fuel >= self.consumption:
-            self.fuel -= self.consumption
-            self.strength -= 1
-            return True
-        else:
-            print("The cat cannot move!")
-            return False
-class Job:
-    def __init__(self, job_list):
-        self.job = random.choice(list(job_list))
-        self.salary = job_list[self.job]['salary']
-        self.gladness_less = job_list[self.job]['gladness_less']
-
-
-job_list = {
-    "Java developer": {"salary": 50, "gladness_less": 10},
-    "Python developer": {"salary": 40, "gladness_less": 3},
-    "C++ developer": {"salary": 60, "gladness_less": 25},
-    "Rust developer": {"salary": 70, "gladness_less": 15},
-    }
-brands_of_car = {
-    "BMW":{"fuel": 100, "strength": 100, "consumption": 6},
-    "Lada":{"fuel": 50, "strength": 40, "consumption": 10},
-    "Volvo":{"fuel": 80, "strength": 150, "consumption": 8},
-    "Ferrari":{"fuel": 80, "strength": 120, "consumption": 14}
-}
-
-h = Human("Aleks")
-
-h.get_car()
+class Hi(Hello_world):
+    def hi_print(self):
+        print(self.hello)
+        print(self.world)
+        print(self._hello)
+        print(self._world)
+        print(self.__hello)
+        print(self.__world)
+hello = Hello_world()
+hello.printer()
+hello._get_printer()
+# hi = Hi()
+# hi.hi_print()
